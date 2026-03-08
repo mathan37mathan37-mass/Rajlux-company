@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>RajluxCompany</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<!-- NAVBAR -->
+
+<header id="navbar">
+
+<div class="logo">Rajlux<span>Company</span></div>
+
+<div id="menuToggle">☰</div>
+
+<nav id="navMenu">
+
+<a href="#home" class="nav-link active">Home</a>
+
+<a href="#services" class="nav-link">Services</a>
+
+<a href="#about" class="nav-link">About</a>
+
+<a href="#contact" class="nav-link">Contact</a>
+
+<button id="themeToggle">🌙</button>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<h1 id="typing">Innovative Digital Solutions</h1>
+
+<p>We build powerful digital experiences for modern businesses.</p>
+
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search our services...">
+
+<button>Search</button>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" class="section reveal">
+
+<h2>Our Services</h2>
+
+<div class="cards">
+
+<a href="web-development.html" class="card">
+
+<i class="fa-solid fa-code service-icon"></i>
+
+<h3>Web Development</h3>
+
+<p>Modern responsive websites & web apps.</p>
+
+</a>
+
+<a href="mobile-apps.html" class="card">
+
+<i class="fa-solid fa-mobile-screen service-icon"></i>
+
+<h3>Mobile Apps</h3>
+
+<p>High-performance Android & iOS apps.</p>
+
+</a>
+
+<a href="digital-marketing.html" class="card">
+
+<i class="fa-solid fa-chart-line service-icon"></i>
+
+<h3>Digital Marketing</h3>
+
+<p>SEO and growth strategies for business.</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PROJECT GALLERY -->
+
+<section class="section">
+
+<h2>Our Project Gallery</h2>
+
+<div class="gallery">
+
+<img src="1000038138.jpg" class="gallery-img">
+
+<img src="1000038139.jpg" class="gallery-img">
+
+<img src="1000038140.jpg" class="gallery-img">
+
+<img src="1000038141.jpg" class="gallery-img">
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="section dark-section reveal">
+
+<h2>About Us</h2>
+
+<p class="about-text">
+
+RajluxCompany is a modern digital agency focused on delivering high-quality,
+
+scalable, and innovative digital solutions for startups and enterprises.
+
+</p>
+
+</section>
+
+
+
+
+<section class="section dark-section">
+
+<h2>Head of the Company</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<p>"RajluxCompany head and also a app developer."</p>
+
+<h4>- R Palanisamy</h4>
+
+</div>
+
+<div class="card">
+
+<p>"CEO of the RajluxCompany and also a web developer."</p>
+
+<h4>- M Mathan</h4>
+
+</div>
+
+<div class="card">
+
+<p>"The team members."</p>
+
+<h4>- Team RajluxCompany</h4>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- TESTIMONIALS -->
+
+<section class="section dark-section">
+
+<h2>What Our Clients Say</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<p>"RajluxCompany built an amazing website for our business."</p>
+
+<h4>- John Smith</h4>
+
+</div>
+
+<div class="card">
+
+<p>"Our mobile app works perfectly thanks to their team."</p>
+
+<h4>- Sarah Lee</h4>
+
+</div>
+
+<div class="card">
+
+<p>"Digital marketing services increased our sales."</p>
+
+<h4>- David Kumar</h4>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact-form">
+
+<h2>Contact Us</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="email" id="email" placeholder="Your Email">
+
+<textarea id="message" placeholder="Your Message"></textarea>
+
+<button onclick="sendMessage()">Send Message</button>
+
+</section>
+
+<footer>
+
+© 2026 RajluxCompany. All rights reserved.
+
+</footer>
+
+
+<!-- PROJECT POPUP -->
+
+<div id="projectModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close">&times;</span>
+
+<img id="modalImg">
+</div>
+
+</div>
+
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import { 
+  getFirestore,
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD190aRyT2Q8u2q8vBOIXQDvy_ObAXTuWI",
+  authDomain: "company-227f9.firebaseapp.com",
+  projectId: "company-227f9",
+  storageBucket: "company-227f9.firebasestorage.app",
+  messagingSenderId: "486645620594",
+  appId: "1:486645620594:web:9a1d6028d8f142b68847eb",
+  measurementId: "G-HEFR2HR0BM"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.sendMessage = async function(){
+
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const message = document.getElementById("message").value;
+
+try {
+
+await addDoc(collection(db, "messages"), {
+  name: name,
+  email: email,
+  message: message,
+  created: new Date()
+});
+
+alert("Message Sent Successfully!");
+
+} catch(error) {
+
+console.error(error);
+alert("Error sending message");
+
+}
+
+}
+
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
