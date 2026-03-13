@@ -7,9 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -112,14 +110,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <div class="gallery">
 
-<img src="1000038138.jpg" class="gallery-img">
+<img src="safe.png" class="gallery-img">
 
-<img src="1000038139.jpg" class="gallery-img">
+<img src="result.png" class="gallery-img">
 
-<img src="1000038140.jpg" class="gallery-img">
+<img src="tt1.png" class="gallery-img">
 
-<img src="1000038141.jpg" class="gallery-img">
+<img src="cgpa.png" class="gallery-img">
 
+<img src="libraryweb.png" class="gallery-img">
+
+<img src="loveweb.png" class="gallery-img">
+
+<img src="voteweb.png" class="gallery-img">
 </div>
 
 </section>
@@ -194,7 +197,7 @@ scalable, and innovative digital solutions for startups and enterprises.
 
 <p>"RajluxCompany built an amazing website for our business."</p>
 
-<h4>- Tamilarasan </h4>
+<h4>- Tamilarasan</h4>
 
 </div>
 
@@ -221,26 +224,56 @@ scalable, and innovative digital solutions for startups and enterprises.
 
 <!-- CONTACT -->
 
-<section id="contact" class="contact-form">
+<section class="section" id="contact">
 
 <h2>Contact Us</h2>
 
-<input type="text" id="name" placeholder="Your Name">
+<form id="contactForm" class="contact-form">
 
-<input type="email" id="email" placeholder="Your Email">
+<input type="text" id="name" placeholder="Your Name" required>
 
-<textarea id="message" placeholder="Your Message"></textarea>
+<input type="email" id="email" placeholder="Your Email" required>
 
-<button onclick="sendMessage()">Send Message</button>
+<input type="tel" id="phone" placeholder="Phone Number (10 digits)" required>
+
+<select id="service" required>
+<option value="">Select Service</option>
+<option value="Web Development">Web Development</option>
+<option value="Mobile App">Mobile App</option>
+<option value="Digital Marketing">Digital Marketing</option>
+</select>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="button" onclick="sendMessage()">Send Message</button>
+
+</form>
 
 </section>
 
 <footer>
 
-© 2026 RajluxCompany. All rights reserved.
+<p>Follow Us</p>
+
+<div class="social-icons">
+
+<a href="https://instagram.com/yourusername" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://facebook.com/yourusername" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="https://twitter.com/yourusername" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+</div>
+
+<p id="company">© 2026 RajluxCompany. All rights reserved.</p>
 
 </footer>
-
 
 <!-- PROJECT POPUP -->
 
@@ -256,58 +289,10 @@ scalable, and innovative digital solutions for startups and enterprises.
 </div>
 
 
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-
-import { 
-  getFirestore,
-  collection,
-  addDoc
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD190aRyT2Q8u2q8vBOIXQDvy_ObAXTuWI",
-  authDomain: "company-227f9.firebaseapp.com",
-  projectId: "company-227f9",
-  storageBucket: "company-227f9.firebasestorage.app",
-  messagingSenderId: "486645620594",
-  appId: "1:486645620594:web:9a1d6028d8f142b68847eb",
-  measurementId: "G-HEFR2HR0BM"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-window.sendMessage = async function(){
-
-const name = document.getElementById("name").value;
-const email = document.getElementById("email").value;
-const message = document.getElementById("message").value;
-
-try {
-
-await addDoc(collection(db, "messages"), {
-  name: name,
-  email: email,
-  message: message,
-  created: new Date()
-});
-
-alert("Message Sent Successfully!");
-
-} catch(error) {
-
-console.error(error);
-alert("Error sending message");
-
-}
-
-}
 
 </script>
 <script src="script.js"></script>
+<script type="module" src="firebase-contact.js"></script>
 
 </body>
-
 </html>
