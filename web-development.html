@@ -25,31 +25,85 @@
 <div class="cards">
 
 <div class="card project-card">
-<img src="1000038140.jpg" alt="Ecommerce Project">
-<h3>E-Commerce Website</h3>
-<p>Online shopping platform with payment gateway.</p>
-<button class="view-btn" onclick="openProject('1000038140.jpg')">View Project</button>
+<img src="libraryweb.png" alt="Library Management System">
+<h3>Library Management System</h3>
+<p>professional Library Management System design for college.</p>
+<p><a href="https://mathan-msd3-library.netlify.app/">For More Details <br><button>click me</button></a></p>
+<button class="view-btn" onclick="openProject('libraryweb.png')">View Project</button>
 </div>
 
 <div class="card project-card">
-<img src="1000038138.jpg" alt="School System">
-<h3>School Management System</h3>
-<p>Student records and attendance system.</p>
-<button class="view-btn" onclick="openProject('1000038138.jpg')">View Project</button>
+<img src="loveweb.png" alt="Lover website">
+<h3>Lover website</h3>
+<p>Professional Lovers website design for Lovers.</p>
+<p><a href="https://siva-paru-msd3.netlify.app/">For More Details <br><button>click me</button></a></p>
+<button class="view-btn" onclick="openProject('loveweb.png')">View Project</button>
 </div>
 
 <div class="card project-card">
-<img src="1000038139.jpg" alt="Company Website">
-<h3>Company Portfolio</h3>
-<p>Professional business website design.</p>
-<button class="view-btn" onclick="openProject('1000038139.jpg')">View Project</button>
+<img src="voteweb.png" alt="Online Voting System">
+<h3>Online Voting System</h3>
+<p>Professional Online Voting System website design for college.</p>
+<p><a href="https://online-voting-system-gamma-one.vercel.app/">For More Details <br><button>click me</button></a></p>
+<button class="view-btn" onclick="openProject('voteweb.png')">View Project</button>
 </div>
 
 </div>
 </section>
 
+<section class="section" id="contact">
+
+<h2>Contact Us</h2>
+
+<form id="contactForm" class="contact-form">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="tel" id="phone" placeholder="Phone Number (10 digits)" required>
+
+<select id="service" required>
+<option value="">Select Service</option>
+<option value="Web Development">Web Development</option>
+<option value="Mobile App">Mobile App</option>
+<option value="Digital Marketing">Digital Marketing</option>
+</select>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="button" onclick="sendMessage()">Send Message</button>
+
+</form>
+
+</section>
+
+
 <footer>
 <a href="index.html">⬅ Back to Home</a>
+</footer>
+<footer>
+
+<p>Follow Us</p>
+
+<div class="social-icons">
+
+<a href="https://instagram.com/yourusername" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://facebook.com/yourusername" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="https://twitter.com/yourusername" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+</div>
+
+<p id="company">© 2026 RajluxCompany. All rights reserved.</p>
+
 </footer>
 
 <!-- PROJECT MODAL -->
@@ -62,6 +116,7 @@
 </div>
 
 <script src="script.js"></script>
+<script type="module" src="firebase-contact.js"></script>
 <script>
 function openProject(src){
   const modal = document.getElementById("projectModal");
@@ -75,5 +130,4 @@ if(modalClose){
 }
 </script>
 </body>
-
 </html>
