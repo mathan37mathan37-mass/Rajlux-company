@@ -105,7 +105,7 @@ el.classList.add("active");
 }
 
 window.addEventListener("scroll", revealOnScroll);
-
+window.addEventListener("load", revealOnScroll);
 
 // ==========================
 // Service Search
