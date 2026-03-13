@@ -93,7 +93,11 @@ HERO
 
 .hero{
 text-align:center;
-padding:120px 20px;
+padding:30px 20px;
+}
+
+.section {
+    padding: 30px 20px;
 }
 
 .hero h1{
@@ -202,6 +206,7 @@ transform:translateY(-15px) scale(1.03);
 font-size:40px;
 margin-bottom:15px;
 color:var(--primary);
+
 }
 
 
@@ -407,3 +412,37 @@ font-size:34px;
     display: block;
 }
 
+body.dark .search-box input{
+color:white;
+}
+
+body.dark .search-box input::placeholder{
+color:#cbd5f5;
+}
+
+.contact-form select{
+padding:15px;
+border-radius:10px;
+border:1px solid #ffffff;
+outline:none;
+}
+
+.social-icons{
+margin-top:15px;
+}
+
+.social-icons a{
+color:var(--text);
+font-size:24px;
+margin:0 10px;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+color:var(--primary);
+transform:scale(1.2);
+}
+
+#company{
+    padding-top: 10px;
+}
