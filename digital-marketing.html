@@ -25,33 +25,81 @@
 <div class="cards">
 
 <div class="card project-card">
-<img src="1000038141.jpg" alt="SEO Optimization">
+<img src="https://picsum.photos/300/200?random=7" alt="SEO Optimization">
 <h3>SEO Optimization</h3>
 <p>Improved Google ranking for company websites.</p>
-<button class="view-btn" onclick="openProject('1000038141.jpg')">View Campaign</button>
+<button class="view-btn" onclick="openProject('https://picsum.photos/600/400?random=7')">View Campaign</button>
 </div>
 
 <div class="card project-card">
-<img src="1000038139.jpg" alt="Social Media Campaign">
+<img src="https://picsum.photos/300/200?random=8" alt="Social Media Campaign">
 <h3>Social Media Campaign</h3>
 <p>Instagram and Facebook brand promotion.</p>
-<button class="view-btn" onclick="openProject('1000038139.jpg')">View Campaign</button>
+<button class="view-btn" onclick="openProject('https://picsum.photos/600/400?random=8')">View Campaign</button>
 </div>
 
 <div class="card project-card">
-<img src="1000038138.jpg" alt="Google Ads Campaign">
+<img src="https://picsum.photos/300/200?random=9" alt="Google Ads Campaign">
 <h3>Google Ads Campaign</h3>
 <p>Paid marketing strategy for online businesses.</p>
-<button class="view-btn" onclick="openProject('1000038138.jpg')">View Campaign</button>
+<button class="view-btn" onclick="openProject('https://picsum.photos/600/400?random=9')">View Campaign</button>
 </div>
 
 </div>
 </section>
+<section class="section" id="contact">
 
+<h2>Contact Us</h2>
+
+<form id="contactForm" class="contact-form">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="tel" id="phone" placeholder="Phone Number (10 digits)" required>
+
+<select id="service" required>
+<option value="">Select Service</option>
+<option value="Web Development">Web Development</option>
+<option value="Mobile App">Mobile App</option>
+<option value="Digital Marketing">Digital Marketing</option>
+</select>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="button" onclick="sendMessage()">Send Message</button>
+
+</form>
+
+</section>
 <footer>
 <a href="index.html">⬅ Back to Home</a>
 </footer>
 
+<footer>
+
+<p>Follow Us</p>
+
+<div class="social-icons">
+
+<a href="https://instagram.com/yourusername" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://facebook.com/yourusername" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+
+<a href="https://twitter.com/yourusername" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+
+</div>
+
+<p id="company">© 2026 RajluxCompany. All rights reserved.</p>
+
+</footer>
 <!-- PROJECT MODAL -->
 <div id="projectModal" class="modal">
 <div class="modal-content">
@@ -61,6 +109,7 @@
 </div>
 
 <script src="script.js"></script>
+<script type="module" src="firebase-contact.js"></script>
 <script>
 function openProject(src){
   const modal = document.getElementById("projectModal");
@@ -74,5 +123,4 @@ if(modalClose){
 }
 </script>
 </body>
-
 </html>
