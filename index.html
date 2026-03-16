@@ -255,7 +255,10 @@ email : rajlux7733@gmail.com.
 
 <textarea id="message" placeholder="Your Message" required></textarea>
 
-<button type="button" onclick="sendMessage()">Send Message</button>
+<button id="sendBtn" onclick="sendMessage()">
+<span id="btnLoader" class="loader" style="display:none;"></span>
+<span id="btnText">Send Message</span>
+</button>
 <p>NOTE : After Sending a message our team will contact you within 24 hours. </p>
 </form>
 
