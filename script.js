@@ -250,6 +250,7 @@ animateParticles();
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
+const navLink = document.querySelectorAll(".nav-link");
 if(menuToggle){
 
 menuToggle.onclick = () => {
@@ -259,3 +260,24 @@ navMenu.classList.toggle("active");
 };
 
 }
+
+/* Close menu when clicking a link */
+
+
+navLink.forEach(link => {
+link.addEventListener("click", () => {
+navMenu.classList.remove("active");
+});
+});
+
+
+document.addEventListener("click", function(e){
+
+if(
+!navMenu.contains(e.target) &&
+!menuToggle.contains(e.target)
+){
+navMenu.classList.remove("active");
+}
+
+});
