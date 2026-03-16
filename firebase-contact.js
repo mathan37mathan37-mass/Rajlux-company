@@ -24,6 +24,15 @@ const db = getFirestore(app);
 
 window.sendMessage = async function(){
 
+const btn = document.getElementById("sendBtn");
+const loader = document.getElementById("btnLoader");
+const text = document.getElementById("btnText");
+
+/* Disable button + show loader */
+btn.disabled = true;
+loader.style.display = "inline-block";
+text.innerText = "Sending...";
+
 const name = document.getElementById("name").value.trim();
 const email = document.getElementById("email").value.trim();
 const phone = document.getElementById("phone").value.trim();
@@ -32,13 +41,11 @@ const message = document.getElementById("message").value.trim();
 
 if(name === "" || email === "" || phone === "" || service === "" || message === ""){
 alert("Please fill all fields");
-return;
-}
 
-const phonePattern = /^[0-9]{10}$/;
+btn.disabled = false;
+loader.style.display = "none";
+text.innerText = "Send Message";
 
-if(!phonePattern.test(phone)){
-alert("Phone number must be 10 digits");
 return;
 }
 
@@ -51,27 +58,19 @@ message:message,
 created:new Date()
 });
 
-emailjs.send("mathan_3737","template_g67jsa3",{
-name:name,
-email:email,
-phone:phone,
-service:service,
-message:message
-});
-
-
 emailjs.send("mathan_3737","template_myubvrr",{
 name:name,
 email:email,
 service:service
 });
 
-
-
-
-
 alert("Message Sent Successfully!");
-location.reload();
+
 document.getElementById("contactForm").reset();
+
+/* Restore button */
+btn.disabled = false;
+loader.style.display = "none";
+text.innerText = "Send Message";
 
 }
