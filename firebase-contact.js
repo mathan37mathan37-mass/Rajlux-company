@@ -51,6 +51,25 @@ message:message,
 created:new Date()
 });
 
+emailjs.send("mathan_3737","template_g67jsa3",{
+name:name,
+email:email,
+phone:phone,
+service:service,
+message:message
+});
+
+
+emailjs.send("mathan_3737","template_myubvrr",{
+name:name,
+email:email,
+service:service
+});
+
+
+
+
+
 alert("Message Sent Successfully!");
 location.reload();
 document.getElementById("contactForm").reset();
